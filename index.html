@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValoSpike</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .glowing-effect {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(0,123,255,0.2) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        header {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gradient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(0,123,255,0.15) 0%, rgba(0,0,0,0) 50%);
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            padding: 2rem;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(0,0,0,0.5);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #fff, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            background: linear-gradient(45deg, #fff, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(45deg, #0077ff, #00a6ff);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(0,119,255,0.5);
+        }
+
+        .features {
+            padding: 8rem 2rem;
+            background: #000;
+            position: relative;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #0077ff;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #0077ff;
+        }
+
+        footer {
+            padding: 3rem 2rem;
+            background: #000;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="glowing-effect"></div>
+    
+    <header>
+        <div class="gradient-bg"></div>
+        <nav>
+            <div class="nav-content">
+                <div class="logo">ValoSpike</div>
+            </div>
+        </nav>
+        
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Domine o Tempo da Spike</h1>
+                <p>Timer inteligente que te ajuda a gerenciar os momentos cruciais do desarme.</p>
+                <button class="btn">Baixar Agora</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Timer Preciso</h3>
+                <p>Contagem regressiva precisa para o desarme da spike</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Feedback Visual</h3>
+                <p>Indicadores claros do tempo restante para desarme</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Interface Minimalista</h3>
+                <p>Design discreto que não interfere na sua gameplay</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 ValoSpike • Não afiliado à Riot Games</p>
+    </footer>
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const glowingEffect = document.querySelector('.glowing-effect');
+            glowingEffect.style.left = e.pageX - 75 + 'px';
+            glowingEffect.style.top = e.pageY - 75 + 'px';
+        });
+    </script>
+</body>
+</html>
